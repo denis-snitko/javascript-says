@@ -1,8 +1,8 @@
-const text = document.querySelector("[data=text]");
+const textarea = document.querySelector("[data=textarea]");
 const sayButton = document.querySelector("[data=say-button]");
 
-text.addEventListener("keydown", (event) => {
-	const value = text.value;
+textarea.addEventListener("keydown", (event) => {
+	const value = textarea.value;
 	const output = new SpeechSynthesisUtterance(value);
 
 	if ((event.ctrlKey || event.metaKey) && event.keyCode == 13) {
@@ -10,18 +10,18 @@ text.addEventListener("keydown", (event) => {
 	}
 
 	output.addEventListener("end", () => {
-		text.value = "";
-		text.focus();
+		textarea.value = "";
+		textarea.focus();
 	});
 });
 
 sayButton.addEventListener("click", (event) => {
-	const value = text.value;
+	const value = textarea.value;
 	const output = new SpeechSynthesisUtterance(value);
 	window.speechSynthesis.speak(output);
 
 	output.addEventListener("end", () => {
-		text.value = "";
-		text.focus();
+		textarea.value = "";
+		textarea.focus();
 	});
 });
