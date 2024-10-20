@@ -10,7 +10,6 @@ textarea.addEventListener("keydown", (event) => {
 	}
 
 	output.addEventListener("end", () => {
-		textarea.value = "";
 		textarea.focus();
 	});
 });
@@ -21,7 +20,12 @@ sayButton.addEventListener("click", (event) => {
 	window.speechSynthesis.speak(output);
 
 	output.addEventListener("end", () => {
-		textarea.value = "";
 		textarea.focus();
 	});
+});
+
+clearButton.addEventListener("click, (event) => {
+	const value = textarea.value;
+
+	textarea.value = "";
 });
