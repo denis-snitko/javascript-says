@@ -1,5 +1,6 @@
 const textarea = document.querySelector("[data=textarea]");
 const sayButton = document.querySelector("[data=say-button]");
+const clearButton = document.querySelector("[data=clear-button]");
 
 textarea.addEventListener("keydown", (event) => {
 	const value = textarea.value;
