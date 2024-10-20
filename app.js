@@ -25,8 +25,7 @@ sayButton.addEventListener("click", (event) => {
 	});
 });
 
-clearButton.addEventListener("click, (event) => {
+clearButton.addEventListener("click", (event) => {
 	const value = textarea.value;
-
 	textarea.value = "";
 });
